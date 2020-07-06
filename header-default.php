@@ -1,9 +1,5 @@
 
-<?php
-
-
-$url = get_stylesheet_directory_uri();
-?>
+<?php $url = get_stylesheet_directory_uri();?>
 
 
 <!DOCTYPE html>

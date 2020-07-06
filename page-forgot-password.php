@@ -10,6 +10,7 @@
  */
 
 get_header();
+$home_url = home_url();
 ?>
 
 
@@ -28,10 +29,10 @@ get_header();
                 </div>
                 <div class="row mt-3">
                     <div class="col-6">
-                        <a href="http://team661.com/consolidators/login/" class="text-light"><small>Sign in</small></a>
+                        <a href="<?= $home_url?>/consolidators/login/" class="text-light"><small>Sign in</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="http://team661.com/consolidators/registration/" class="text-light"><small>Create an account</small></a>
+                        <a href="<?= $home_url?>/consolidators/registration/" class="text-light"><small>Create an account</small></a>
                     </div>
                 </div>
             </div>

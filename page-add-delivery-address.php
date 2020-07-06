@@ -36,6 +36,9 @@ if (isset( $_POST['action']) && 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( 
 
     endif;
 
+    $page = get_page_by_title('dashboard');
+    wp_redirect(get_permalink($page->ID));
+
 
 }
 

@@ -234,9 +234,7 @@ $title = "Dashboard";
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">Recipient's Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Country</th>
-                                <th scope="col">Type</th>
+                                <th scope="col">Address</th>          
                                 <th scope="col">Default</th>
                                 <th scope="col">	Action</th>
                             </tr>
@@ -293,17 +291,17 @@ $title = "Dashboard";
 
 </html>
 
-?>
 	<script>
-
+ var urlData = window.location.hostname + "/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php"
 	function makeDefaultAddress(sval)
-{
+{ 
+   
 	var x = confirm("Are you sure you want to change default Address?");
 	if (x)
 	{
         jQuery.ajax({
             type:"POST",
-            url: "http://team661.com/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php",
+            url: urlData,
             cache: false,
             data: {
                 addID 	: sval,
@@ -318,7 +316,7 @@ $title = "Dashboard";
                 }
                 else if(data == 'Changed')
                 {
-                    window.location.href = "http://team661.com/consolidators/dashboard/?success=save_address";
+                    window.location.href = window.location.origin+"/californila/consolidators/dashboard/?success=save_address";
                 } else {
                     alert(data);
                     jQuery('#loadingDiv_address').hide();
@@ -341,7 +339,7 @@ function ConfirmDelete(addressID,del_delivery_add_hid)
 
 	jQuery.ajax({
 			type:"POST",
-			url: "http://team661.com/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php",
+            url: urlData,
       cache: false,
       data: {
       addID 	: addressID,
@@ -356,7 +354,7 @@ function ConfirmDelete(addressID,del_delivery_add_hid)
           }
           else if(data == 'Deleted')
           {
-              window.location.href = "http://team661.com/consolidators/dashboard/?success=delete_address";
+            window.location.href = window.location.origin+"/californila/consolidators/dashboard/?success=delete_address";
 
           } else {
               alert(data);
@@ -378,7 +376,7 @@ jQuery(document).ready(function($){
 	var AdvertisementDataSource = new kendo.data.DataSource({
 		transport: {
 			read: {
-				url: "http://team661.com/wp-admin/admin-ajax.php",
+                url: urlData,
 				type: "GET",
 				dataType: "json",
 				contentType: "application/json; charset=utf-8",
