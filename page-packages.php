@@ -298,6 +298,7 @@ $title = "Packages Consolidators";
 </html>
 
 	<script>
+     var urlData = window.location.hostname + "/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php"
         function change_to_reserve(sval,status,page) {
 
             var x = confirm("Are you sure this will take package to the Standby package?");
@@ -305,7 +306,7 @@ $title = "Packages Consolidators";
 
                 jQuery.ajax({
                     type: "POST",
-                    url: "http://team661.com/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php",
+                    url: urlData,
                     cache: false,
                     data: {
                         order_id: sval,
@@ -329,7 +330,7 @@ $title = "Packages Consolidators";
             {
                 jQuery.ajax({
                     type: "POST",
-                    url: "http://team661.com/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php",
+                    url: urlData,
                     cache: false,
                     data: {
                         action: 'reset_schedule',
@@ -363,7 +364,7 @@ $title = "Packages Consolidators";
 			wareHouseId = '';
 			jQuery.ajax({
 				type:"POST",
-					url: "http://team661.com/wp-content/themes/advisor-dashboard/Class/dashboard-ajax.php",
+                url: urlData,
 				cache: false,
 				data: {
 						wareHouseId : '',
